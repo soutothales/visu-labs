@@ -1,3 +1,6 @@
 [submodule "themes/themes/retrofulhugo"]
 	path = themes/themes/retrofulhugo
 	url = https://github.com/5armale/retrofulhugo.git
+[submodule "themes/minimal"]
+	path = themes/minimal
+	url = https://github.com/calintat/minimal.git
