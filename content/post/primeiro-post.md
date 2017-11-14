@@ -9,10 +9,6 @@ draft: false
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
-
-</head>
-
-<body>
 <script>
     const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Retroful Hugo</title>
-    <link>https://soutothales.github.io/visu-labs/</link>
-    <description>Recent content on Retroful Hugo</description>
+    <title>Posts on Retroful Hugo</title>
+    <link>https://soutothales.github.io/visu-labs/post/</link>
+    <description>Recent content in Posts on Retroful Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>thales.souto@ccc.ufcg.edu.br (Thales Souto)</managingEditor>
     <webMaster>thales.souto@ccc.ufcg.edu.br (Thales Souto)</webMaster>
     <lastBuildDate>Tue, 14 Nov 2017 08:44:40 -0300</lastBuildDate>
     
-	<atom:link href="https://soutothales.github.io/visu-labs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://soutothales.github.io/visu-labs/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

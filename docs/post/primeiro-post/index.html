@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Retroful Hugo</title>
+  <title>Primeiro Post</title>
   
   <meta name="author" content="Thales Souto"/>
   <meta name="generator" content="Hugo 0.30.2" />
@@ -20,9 +20,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
 
   
-  <meta property="og:title" content="Retroful Hugo" />
+  <meta property="og:title" content="Primeiro Post" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/visu-labs/" />
+  <meta property="og:url" content="/visu-labs/post/primeiro-post/" />
   <meta property="og:image" content="/img/srm.png" />
   
 </head>
@@ -68,51 +68,102 @@
 </nav>
 
 
-    <header class="header-section ">
-      <div class="intro-header no-img">
+    <div role="main" class="container main-content">
+
+      
+
+
+
+  
+
+  <header class="header-section ">
+  
+  <div class="intro-header no-img">
+      <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Primeiro Post</h1>
+      
+      
+      
+			<span class="post-meta">Posted on November 14, 2017 | written by menthales </span>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </header>
+
+	  
+      
         <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-              <div class="page-heading">
-											
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+          <div id="vis" width=300></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
+<script>
+    const spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "data": {
+        "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+        "format": {
+        "type": "json",
+        "property": "volumes",
+        "parse": {
+            "DataInformacao": "utc:'%d/%m/%Y'"
+                }
+            }
+        },
 
-    <div role="main" class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div class="posts-list">
-            
-            
-            <article class="post-preview">
-              <a href="https://soutothales.github.io/visu-labs/post/primeiro-post/">
-          	  <h1 class="post-title">Primeiro Post</h1>
-          	
-          	    
-              </a>
+    "width": 500,
+    "height": 120,
 
-              <p class="post-meta">
-							Posted on November 14, 2017 | written by menthales
-              </p>
-            
-              <div class="post-entry">
-											<p>const spec = { "$schema": "https://vega.github.io/schema/vega-lite/v2.json", "data": { "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento", "format": { "type": "json", "property": "volumes", "parse": { "DataInformacao": "utc:'%d/%m/%Y'" } } }, "width": 500, "height": 120, "mark": { "type": "area", "interpolate": "monotone" }, "selection": { "brush": {"type": "interval", "encodings": ["x"]} }, "encoding": { "x": { "timeUnit" : "monthyear", "field": "DataInformacao", "type": "temporal", "axis": {"format": "%Y", "title" : "Volume percentual ao longo dos anos"} }, "</p>
-								<a href="https://soutothales.github.io/visu-labs/post/primeiro-post/" class="post-read-more">[READ&nbsp;MORE]</a>
-              </div>
-            
-             </article>
-            
-          </div>
+    "mark": {
+        "type": "area",
+        "interpolate": "monotone"
+    },
+    "selection": {
+      "brush": {"type": "interval", "encodings": ["x"]}
+    },
+    "encoding": {
+      "x": {
+        "timeUnit" : "monthyear",
+        "field": "DataInformacao",
+        "type": "temporal",
+        "axis": {"format": "%Y", "title" : "Volume percentual ao longo dos anos"}
+       },
+      "y": {
+        "field": "VolumePercentual",
+        "type": "quantitative",
+        "axis": {"tickCount": 30, "grid": false, "title": "Volume percentual"}
+         }
+       }
+     };
+    vegaEmbed('#vis', spec).catch(console.warn);
+</script>
 
-          
-        </div>
-      </div>
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+
     </div>
 
     <footer>

@@ -1,4 +1,4 @@
-aseurl = "http://yoursite.tld"
+baseurl = "https://soutothales.github.io/visu-labs/"
 languageCode = "en-us"
 title = "Retroful Hugo"
 theme = "retrofulhugo"
@@ -28,4 +28,4 @@ pygmentsUseClasses = true
 #[[menu.main]]
 #    name = "About"
 #    url = "/page/about/"
-#    weight = 2 
+#    weight = 2
