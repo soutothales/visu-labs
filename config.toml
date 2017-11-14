@@ -1,0 +1,31 @@
+aseurl = "http://yoursite.tld"
+languageCode = "en-us"
+title = "Retroful Hugo"
+theme = "retrofulhugo"
+publishDir = "docs"
+pygmentsUseClasses = true
+#googleAnalytics = "XXX"
+#disqusShortname = "XXX"
+
+[Params]
+  subtitle = ""
+  logo = "img/srm.png"
+  favicon = "img/favicon.ico"
+  commit = false
+
+[Author]
+	handle = "menthales"
+  name = "Thales Souto"
+  email = "thales.souto@ccc.ufcg.edu.br"
+  github = "github.com/soutothales"
+  twitter = "twitter.com/menthales"
+
+[[menu.main]]
+    name = "Menu Item"
+    url = "http://google.com"
+    weight = 1
+
+#[[menu.main]]
+#    name = "About"
+#    url = "/page/about/"
+#    weight = 2 
