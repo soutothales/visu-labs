@@ -39,26 +39,16 @@ pygmentsUseClasses = true
 # The list of available icons can be found at http://fontawesome.io/icons/
 
 [[menu.icon]]
-    url = "mailto:me@example.com"
+    url = "thales.souto@ccc.ufcg.edu.br"
     name = "envelope-o"
     weight = 1
 
 [[menu.icon]]
-    url = "https://github.com/username/"
+    url = "https://github.com/soutothales/"
     name = "github"
     weight = 2
 
 [[menu.icon]]
-    url = "https://twitter.com/username/"
+    url = "https://twitter.com/menthales/"
     name = "twitter"
     weight = 3
-
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/username/"
-    name = "linkedin"
-    weight = 4
-
-[[menu.icon]]
-    url = "https://www.stackoverflow.com/username/"
-    name = "stack-overflow"
-    weight = 5
