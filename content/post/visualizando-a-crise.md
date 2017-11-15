@@ -34,7 +34,7 @@ Antes de começarmos a analisar o antes e depois da transposição, vamos observ
     "height": 120,
 
     "mark": {
-        "type": "line",
+        "type": "area",
         "interpolate": "monotone"
     },
     "selection": {
@@ -85,10 +85,11 @@ const specMaior = {
     "transform": [
           {"filter": {"timeUnit": "year", "field": "DataInformacao", "range": [2011, 2011] }}
     ],
-            
-    "mark": "line",    
+    
+    "layer": [{
+    "mark": "circle",
     "encoding": {
-        "x": {
+      "x": {
             "timeUnit": "yearmonth",
             "field": "DataInformacao",
             "type": "ordinal"
@@ -99,9 +100,22 @@ const specMaior = {
             "type": "quantitative"
         
     }
-    
-  }
-    };
+    }
+  }, {
+    "mark": {
+      "type": "text",
+      "align": "bottom",
+      "baseline": "middle",
+      "dy": 15
+    },
+    "encoding": {
+      "y": {"aggregate": "mean", "field": "VolumePercentual", "type": "quantitative"},
+      "x": {"timeUnit": "yearmonth", "field": "DataInformacao", "type": "ordinal"},
+      "text": {"aggregate": "max", "field": "VolumePercentual", "type": "quantitative"}
+    }
+  }]
+  
+  };
     
     vegaEmbed('#visMaior', specMaior).catch(console.warn);
 
@@ -184,7 +198,7 @@ const specTransp = {
           {"filter": {"timeUnit": "year", "field": "DataInformacao", "range": [2017, 2017] }}
     ],
             
-    "mark": "line",    
+    "mark": "bar",    
     "encoding": {
         "x": {
             "timeUnit": "yearmonth",
