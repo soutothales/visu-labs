@@ -6,27 +6,19 @@
     <description>Recent content in Posts on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Nov 2017 12:02:28 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2017 17:31:26 -0300</lastBuildDate>
     
 	<atom:link href="https://soutothales.github.io/visu-labs/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Original Post</title>
-      <link>https://soutothales.github.io/visu-labs/post/original-post/</link>
-      <pubDate>Wed, 15 Nov 2017 12:02:28 -0300</pubDate>
+      <title>Visualizando a Crise</title>
+      <link>https://soutothales.github.io/visu-labs/post/visualizando-a-crise/</link>
+      <pubDate>Wed, 15 Nov 2017 17:31:26 -0300</pubDate>
       
-      <guid>https://soutothales.github.io/visu-labs/post/original-post/</guid>
-      <description>     const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;transform&#34;: [ {&#34;filter&#34;: {&#34;timeUnit&#34;: &#34;year&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;: [2015, 2017] }} ], &#34;mark&#34;: &#34;line&#34;, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34;: &#34;yearmonth&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;ordinal&#34; }, &#34;y&#34;: { &#34;aggregate&#34;: &#34;mean&#34;, &#34;field&#34;: &#34;VolumePercentual&#34;, &#34;type&#34;: &#34;quantitative&#34; } } }; vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);  </description>
-    </item>
-    
-    <item>
-      <title>Primeiro Post</title>
-      <link>https://soutothales.github.io/visu-labs/post/primeiro-post/</link>
-      <pubDate>Tue, 14 Nov 2017 08:44:40 -0300</pubDate>
-      
-      <guid>https://soutothales.github.io/visu-labs/post/primeiro-post/</guid>
-      <description>     const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;transform&#34;: [ {&#34;filter&#34;: {&#34;timeUnit&#34;: &#34;year&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;range&#34;: [2015, 2017] }} ], &#34;mark&#34;: &#34;line&#34;, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34;: &#34;yearmonth&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;ordinal&#34; }, &#34;y&#34;: { &#34;aggregate&#34;: &#34;mean&#34;, &#34;field&#34;: &#34;VolumePercentual&#34;, &#34;type&#34;: &#34;quantitative&#34; } } }; vegaEmbed(&#39;#vis&#39;, spec).catch(console.warn);  </description>
+      <guid>https://soutothales.github.io/visu-labs/post/visualizando-a-crise/</guid>
+      <description>Visualizando nossa crise hídrica antes e depois da transposição I. Visualizando o geral Antes de começarmos a analisar o antes e depois da transposição, vamos observar o comportamento do volume de nosso reservatório de boqueirão desde 1990.
+     const specTotal = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 500, &#34;height&#34;: 120, &#34;</description>
     </item>
     
   </channel>
