@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://soutothales.github.io/visu-labs/post/original-post/</loc>
+    <lastmod>2017-11-15T12:02:28-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://soutothales.github.io/visu-labs/post/primeiro-post/</loc>
     <lastmod>2017-11-14T08:44:40-03:00</lastmod>
   </url>
@@ -14,13 +19,13 @@
   
   <url>
     <loc>https://soutothales.github.io/visu-labs/</loc>
-    <lastmod>2017-11-14T08:44:40-03:00</lastmod>
+    <lastmod>2017-11-15T12:02:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://soutothales.github.io/visu-labs/post/</loc>
-    <lastmod>2017-11-14T08:44:40-03:00</lastmod>
+    <lastmod>2017-11-15T12:02:28-03:00</lastmod>
     <priority>0</priority>
   </url>
   
