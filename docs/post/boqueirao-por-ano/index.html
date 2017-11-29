@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-         
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Boqueirao Por Ano</title>
@@ -29,19 +29,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
 
- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- 
+
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
 
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -59,13 +59,13 @@
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.30.2" />
-        
-        
-        
+
+
+
     </head>
 
     <body>
-         
+
         <nav class="navbar navbar-default navbar-fixed-top">
 
             <div class="container">
@@ -84,29 +84,29 @@
 
                 <div class="collapse navbar-collapse">
 
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="/visu-labs/">Home</a></li>
-                            
-                                <li><a href="/visu-labs/post/">Posts</a></li>
-                            
-                                <li><a href="/visu-labs/project/">Projects</a></li>
-                            
-                        </ul>
-                    
 
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="thales.souto@ccc.ufcg.edu.br"><i class="fa fa-envelope-o"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://github.com/soutothales/"><i class="fa fa-github"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://twitter.com/menthales/"><i class="fa fa-twitter"></i></a></li>
-                            
+                        <ul class="nav navbar-nav">
+
+                                <li><a href="/visu-labs/">Home</a></li>
+
+                                <li><a href="/visu-labs/post/">Posts</a></li>
+
+                                <li><a href="/visu-labs/project/">Projects</a></li>
+
                         </ul>
-                    
+
+
+
+                        <ul class="nav navbar-nav navbar-right">
+
+                                <li class="navbar-icon"><a href="thales.souto@ccc.ufcg.edu.br"><i class="fa fa-envelope-o"></i></a></li>
+
+                                <li class="navbar-icon"><a href="https://github.com/soutothales/"><i class="fa fa-github"></i></a></li>
+
+                                <li class="navbar-icon"><a href="https://twitter.com/menthales/"><i class="fa fa-twitter"></i></a></li>
+
+                        </ul>
+
 
                 </div>
 
@@ -119,16 +119,16 @@
 
     <div class="item">
 
-    
-    
-    
 
-    
-    
+
+
+
+
+
 
     <h4><a href="/visu-labs/post/boqueirao-por-ano/">Boqueirao Por Ano</a></h4>
     <h5>November 28, 2017</h5>
-    
+
 
 </div>
 
@@ -139,41 +139,17 @@
     </div>
     <div class="row mychart" id="chart">
     </div>
-  </div>
 
-<p><style>
-    /*.mychart circle {
-      fill: steelblue;
-    }</p>
-
-<pre><code>.mychart circle:hover {
-  fill: goldenrod;
-}*/
-</code></pre>
-
-<p></style></p>
-
-<p><script type="text/javascript">
+<script type="text/javascript">
     &ldquo;use strict&rdquo;</p>
 
-<pre><code>var alturaSVG = 400, larguraSVG = 900;
-var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+var alturaSVG = 400, larguraSVG = 900;
+var margin = {top: 10, right: 20, bottom:30, left: 45},
     larguraVis = larguraSVG - margin.left - margin.right,
     alturaVis = alturaSVG - margin.top - margin.bottom;
 
 
-
-/*
- * Prepara onde adicionaremos a visualizacao
- */
-</code></pre>
-
-<p>function desenhaCirculos(dados) {</p>
-
-<pre><code>/*
- * Prepara onde adicionaremos a visualizacao
- */
-var grafico = d3.select('#chart') // cria elemento &lt;svg&gt; com um &lt;g&gt; dentro
+function desenhaCirculos(dados) {var grafico = d3.select('#chart')
   .append('svg')
     .attr('width', larguraVis + margin.left + margin.right)
     .attr('height', alturaVis + margin.top + margin.bottom)
@@ -181,23 +157,18 @@ var grafico = d3.select('#chart') // cria elemento &lt;svg&gt; com um &lt;g&gt; 
     .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
 
-/*
- * As escalas
- */
 
 var x = d3.scaleBand()
           .domain(dados.map((dados, indice) =&gt; dados.mes))
-          .range([0, larguraVis]); // Configure essa escala com domain, range e padding
+          .range([0, larguraVis]);
 
 var y = d3.scaleLinear()
           .domain([0, 100])
           .range([alturaVis, 0]); // Configure essa escala com domain e range
-                         // Lembre que uma escala pode converter de 1..10 -&gt; 100..1
 
 
-/*
- * As marcas
- */
+
+
 
 
 grafico.selectAll('g')
@@ -223,34 +194,30 @@ grafico.selectAll('g')
 
 
 
-/*
- * Os eixos
- */
+
 grafico.append(&quot;g&quot;)
         .attr(&quot;class&quot;, &quot;x axis&quot;)
         .attr(&quot;transform&quot;, &quot;translate(0,&quot; + alturaVis + &quot;)&quot;)
-        .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+        .call(d3.axisBottom(x));
 
 grafico.append('g')
         .attr('transform', 'translate(0,0)')
-        .call(d3.axisLeft(y));  // gera eixo a partir da escala
-</code></pre>
-
-<p>}</p>
-
-<p>d3.csv(&lsquo;dados/boqueirao-por-mes.csv&rsquo;, function(dados) {
+        .call(d3.axisLeft(y));
+d3.csv(&lsquo;dados/boqueirao-por-mes.csv&rsquo;, function(dados) {
     desenhaCirculos(dados);
-  });</p>
+  });
 
-<p></script></p>
+</script>
+
+</div>
 </div>
 
-    
-    
 
-    
 
-    
+
+
+
+
 
 </main>
 
@@ -259,8 +226,7 @@ grafico.append('g')
             <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
-       
+
     </body>
 
 </html>
-

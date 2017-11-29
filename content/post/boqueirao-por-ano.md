@@ -4,45 +4,27 @@ date: 2017-11-28T09:34:05-03:00
 draft: false
 ---
 
+
+
 <div class="container">
     <div class="row">
       <h2>Visualização final de boqueirão</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
-  </div>
-
-  <style>
-    /*.mychart circle {
-      fill: steelblue;
-    }
-
-    .mychart circle:hover {
-      fill: goldenrod;
-    }*/
-
-  </style>
 
   <script type="text/javascript">
     "use strict"
 
     var alturaSVG = 400, larguraSVG = 900;
-    var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+    var	margin = {top: 10, right: 20, bottom:30, left: 45},
         larguraVis = larguraSVG - margin.left - margin.right,
         alturaVis = alturaSVG - margin.top - margin.bottom;
 
 
-
-    /*
-     * Prepara onde adicionaremos a visualizacao
-     */
-
   function desenhaCirculos(dados) {
 
-    /*
-     * Prepara onde adicionaremos a visualizacao
-     */
-    var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+    var grafico = d3.select('#chart')
       .append('svg')
         .attr('width', larguraVis + margin.left + margin.right)
         .attr('height', alturaVis + margin.top + margin.bottom)
@@ -50,23 +32,18 @@ draft: false
         .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
 
-    /*
-     * As escalas
-     */
 
     var x = d3.scaleBand()
               .domain(dados.map((dados, indice) => dados.mes))
-              .range([0, larguraVis]); // Configure essa escala com domain, range e padding
+              .range([0, larguraVis]);
 
     var y = d3.scaleLinear()
               .domain([0, 100])
               .range([alturaVis, 0]); // Configure essa escala com domain e range
-                             // Lembre que uma escala pode converter de 1..10 -> 100..1
 
 
-    /*
-     * As marcas
-     */
+
+
 
 
     grafico.selectAll('g')
@@ -92,17 +69,15 @@ draft: false
 
 
 
-    /*
-     * Os eixos
-     */
+
     grafico.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + alturaVis + ")")
-            .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+            .call(d3.axisBottom(x));
 
     grafico.append('g')
             .attr('transform', 'translate(0,0)')
-            .call(d3.axisLeft(y));  // gera eixo a partir da escala
+            .call(d3.axisLeft(y));
 
 
 
@@ -113,3 +88,5 @@ draft: false
   });
 
   </script>
+
+</div>
