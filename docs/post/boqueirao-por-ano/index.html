@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>Boqueirao Por Ano</title>
         <style>
 
     html body {
@@ -60,9 +60,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.30.2" />
         
-        <link href="https://soutothales.github.io/visu-labs/post/index.xml" rel="alternate" type="application/rss+xml" title="Minimal" />
-        <link href="https://soutothales.github.io/visu-labs/post/index.xml" rel="feed" type="application/rss+xml" title="Minimal" />
-        
         
         
     </head>
@@ -75,7 +72,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Posts</a>
+                    <a class="navbar-brand visible-xs" href="#">Boqueirao Por Ano</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -120,9 +117,7 @@
 
 <main>
 
-    <h2>Posts</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -136,25 +131,128 @@
     
 
 </div>
-  <div class="item">
 
-    
-    
-    
 
-    
-    
+    <br> <div class="text-justify"><div class="container">
+    <div class="row">
+      <h2>Visualização final de boqueirão</h2>
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div>
 
-    <h4><a href="/visu-labs/post/visualizando-a-crise/">Visualizando a Crise</a></h4>
-    <h5>November 15, 2017</h5>
-    
+<p><style>
+    /*.mychart circle {
+      fill: steelblue;
+    }</p>
 
+<pre><code>.mychart circle:hover {
+  fill: goldenrod;
+}*/
+</code></pre>
+
+<p></style></p>
+
+<p><script type="text/javascript">
+    &ldquo;use strict&rdquo;</p>
+
+<pre><code>var alturaSVG = 400, larguraSVG = 900;
+var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+    larguraVis = larguraSVG - margin.left - margin.right,
+    alturaVis = alturaSVG - margin.top - margin.bottom;
+
+
+
+/*
+ * Prepara onde adicionaremos a visualizacao
+ */
+</code></pre>
+
+<p>function desenhaCirculos(dados) {</p>
+
+<pre><code>/*
+ * Prepara onde adicionaremos a visualizacao
+ */
+var grafico = d3.select('#chart') // cria elemento &lt;svg&gt; com um &lt;g&gt; dentro
+  .append('svg')
+    .attr('width', larguraVis + margin.left + margin.right)
+    .attr('height', alturaVis + margin.top + margin.bottom)
+  .append('g') // para entender o &lt;g&gt; vá em x03-detalhes-svg.html
+    .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+
+
+/*
+ * As escalas
+ */
+
+var x = d3.scaleBand()
+          .domain(dados.map((dados, indice) =&gt; dados.mes))
+          .range([0, larguraVis]); // Configure essa escala com domain, range e padding
+
+var y = d3.scaleLinear()
+          .domain([0, 100])
+          .range([alturaVis, 0]); // Configure essa escala com domain e range
+                         // Lembre que uma escala pode converter de 1..10 -&gt; 100..1
+
+
+/*
+ * As marcas
+ */
+
+
+grafico.selectAll('g')
+        .data(dados)
+        .enter()
+          .append('circle')
+            .attr(&quot;cx&quot;, d =&gt; x(d.mes) + 40)
+            .attr(&quot;cy&quot;, d =&gt; y(d.mediana))
+            .attr(&quot;r&quot;, d =&gt; d.noventa_percentil * 0.38)
+            .style(&quot;fill&quot;, &quot;goldenrod&quot;);
+
+
+grafico.selectAll('g')
+       .data(dados)
+       .enter()
+        .append('circle')
+           .attr(&quot;cx&quot;, d =&gt; x(d.mes) + 40)
+           .attr(&quot;cy&quot;, d =&gt; y(d.mediana))
+           .attr(&quot;cz&quot;, d =&gt; -1)
+           .attr(&quot;r&quot;, d =&gt; d.dez_percentil * 0.50)
+           .style(&quot;fill&quot;, &quot;steelblue&quot;);
+
+
+
+
+/*
+ * Os eixos
+ */
+grafico.append(&quot;g&quot;)
+        .attr(&quot;class&quot;, &quot;x axis&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(0,&quot; + alturaVis + &quot;)&quot;)
+        .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+
+grafico.append('g')
+        .attr('transform', 'translate(0,0)')
+        .call(d3.axisLeft(y));  // gera eixo a partir da escala
+</code></pre>
+
+<p>}</p>
+
+<p>d3.csv(&lsquo;dados/boqueirao-por-mes.csv&rsquo;, function(dados) {
+    desenhaCirculos(dados);
+  });</p>
+
+<p></script></p>
 </div>
- 
+
+    
+    
+
+    
+
+    
 
 </main>
-
-
 
         <footer>
 

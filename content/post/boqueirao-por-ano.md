@@ -1,12 +1,12 @@
 ---
 title: "Boqueirao Por Ano"
 date: 2017-11-28T09:34:05-03:00
-draft: true
+draft: false
 ---
 
 <div class="container">
     <div class="row">
-      <h2>Visualização de boqueirão</h2>
+      <h2>Visualização final de boqueirão</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
@@ -26,60 +26,90 @@ draft: true
   <script type="text/javascript">
     "use strict"
 
-    var alturaSVG = 500,
-        larguraSVG = 1750;
-
-
-    function desenhaVis(dados) {
-          var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
-                            .append('svg')
-                              .attr('width', larguraSVG)
-                              .attr('height', alturaSVG);
+    var alturaSVG = 400, larguraSVG = 900;
+    var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+        larguraVis = larguraSVG - margin.left - margin.right,
+        alturaVis = alturaSVG - margin.top - margin.bottom;
 
 
 
-          /*
-           * As marcas
-           */
+    /*
+     * Prepara onde adicionaremos a visualizacao
+     */
+
+  function desenhaCirculos(dados) {
+
+    /*
+     * Prepara onde adicionaremos a visualizacao
+     */
+    var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+      .append('svg')
+        .attr('width', larguraVis + margin.left + margin.right)
+        .attr('height', alturaVis + margin.top + margin.bottom)
+      .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+        .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+
+
+    /*
+     * As escalas
+     */
+
+    var x = d3.scaleBand()
+              .domain(dados.map((dados, indice) => dados.mes))
+              .range([0, larguraVis]); // Configure essa escala com domain, range e padding
+
+    var y = d3.scaleLinear()
+              .domain([0, 100])
+              .range([alturaVis, 0]); // Configure essa escala com domain e range
+                             // Lembre que uma escala pode converter de 1..10 -> 100..1
+
+
+    /*
+     * As marcas
+     */
+
+
+    grafico.selectAll('g')
+            .data(dados)
+            .enter()
+              .append('circle')
+                .attr("cx", d => x(d.mes) + 40)
+                .attr("cy", d => y(d.mediana))
+                .attr("r", d => d.noventa_percentil * 0.38)
+                .style("fill", "goldenrod");
+
+
+    grafico.selectAll('g')
+           .data(dados)
+           .enter()
+            .append('circle')
+               .attr("cx", d => x(d.mes) + 40)
+               .attr("cy", d => y(d.mediana))
+               .attr("cz", d => -1)
+               .attr("r", d => d.dez_percentil * 0.50)
+               .style("fill", "steelblue");
 
 
 
-           var grupo = grafico.selectAll('g')
-                   .data(dados)
-                   .enter()
-                   .append('g');
 
+    /*
+     * Os eixos
+     */
+    grafico.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + alturaVis + ")")
+            .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
 
-         grupo.append('circle')
-            .attr("cx", function(d) { return (d.mes) * 125; })
-            .attr("cy", 250)
-            .attr("r", function(d) { return d.noventa_percentil * 0.60; })
-            .style("fill", "goldenrod");
-
-          grupo.append('circle')
-             .attr("cx", function(d) { return (d.mes) * 125; })
-             .attr("cy", 250)
-             .attr("r", function(d) { return d.dez_percentil; })
-             .style("fill", "steelblue");
-
-        grupo.append('text')
-             .text(function(d){
-                return d.mes;
-             })
-             .attr("x", function(d) { return (d.mes) * 125 - 8; }) //Localização de onde o número ficará na barrano eixo X
-             .attr("y", 250);
+    grafico.append('g')
+            .attr('transform', 'translate(0,0)')
+            .call(d3.axisLeft(y));  // gera eixo a partir da escala
 
 
 
+  }
 
-
-    }
-
-    d3.csv('dados/boqueirao-por-mes.csv', function(dados) {
-      console.log("provavelmente acontece depois");
-      desenhaVis(dados);
-    });
-
-    console.log("provavelmente acontece primeiro") // me apague quando entender.
+  d3.csv('dados/boqueirao-por-mes.csv', function(dados) {
+    desenhaCirculos(dados);
+  });
 
   </script>
