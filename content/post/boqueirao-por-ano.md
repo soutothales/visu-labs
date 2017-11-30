@@ -4,7 +4,7 @@ date: 2017-11-28T09:34:05-03:00
 draft: false
 ---
 
-
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
 <div class="container">
     <div class="row">
@@ -12,25 +12,26 @@ draft: false
     </div>
     <div class="row mychart" id="chart">
     </div>
+  </div>
 
-  <script type="text/javascript">
+<script type="text/javascript">
     "use strict"
 
     var alturaSVG = 400, larguraSVG = 900;
-    var	margin = {top: 10, right: 20, bottom:30, left: 45},
+    var	margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
         larguraVis = larguraSVG - margin.left - margin.right,
         alturaVis = alturaSVG - margin.top - margin.bottom;
 
 
+
   function desenhaCirculos(dados) {
 
-    var grafico = d3.select('#chart')
+    var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
       .append('svg')
         .attr('width', larguraVis + margin.left + margin.right)
         .attr('height', alturaVis + margin.top + margin.bottom)
       .append('g') // para entender o <g> vá em x03-detalhes-svg.html
         .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
-
 
 
     var x = d3.scaleBand()
@@ -39,8 +40,7 @@ draft: false
 
     var y = d3.scaleLinear()
               .domain([0, 100])
-              .range([alturaVis, 0]); // Configure essa escala com domain e range
-
+              .range([alturaVis, 0]);
 
 
 
@@ -67,23 +67,20 @@ draft: false
                .style("fill", "steelblue");
 
 
-
-
-
     grafico.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + alturaVis + ")")
-            .call(d3.axisBottom(x));
+            .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
 
     grafico.append('g')
             .attr('transform', 'translate(0,0)')
-            .call(d3.axisLeft(y));
+            .call(d3.axisLeft(y));  // gera eixo a partir da escala
 
 
 
   }
 
-  d3.csv('dados/boqueirao-por-mes.csv', function(dados) {
+  d3.csv('../dados/boqueirao-por-mes.csv', function(dados) {
     desenhaCirculos(dados);
   });
 

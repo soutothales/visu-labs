@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-
+         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Boqueirao Por Ano</title>
@@ -29,19 +29,19 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
 
- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+ 
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
 
     <script>hljs.initHighlightingOnLoad();</script>
 
@@ -59,13 +59,13 @@
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.30.2" />
-
-
-
+        
+        
+        
     </head>
 
     <body>
-
+         
         <nav class="navbar navbar-default navbar-fixed-top">
 
             <div class="container">
@@ -84,29 +84,29 @@
 
                 <div class="collapse navbar-collapse">
 
-
+                    
                         <ul class="nav navbar-nav">
-
+                            
                                 <li><a href="/visu-labs/">Home</a></li>
-
+                            
                                 <li><a href="/visu-labs/post/">Posts</a></li>
-
+                            
                                 <li><a href="/visu-labs/project/">Projects</a></li>
-
+                            
                         </ul>
+                    
 
-
-
+                    
                         <ul class="nav navbar-nav navbar-right">
-
+                            
                                 <li class="navbar-icon"><a href="thales.souto@ccc.ufcg.edu.br"><i class="fa fa-envelope-o"></i></a></li>
-
+                            
                                 <li class="navbar-icon"><a href="https://github.com/soutothales/"><i class="fa fa-github"></i></a></li>
-
+                            
                                 <li class="navbar-icon"><a href="https://twitter.com/menthales/"><i class="fa fa-twitter"></i></a></li>
-
+                            
                         </ul>
-
+                    
 
                 </div>
 
@@ -119,105 +119,111 @@
 
     <div class="item">
 
+    
+    
+    
 
-
-
-
-
-
+    
+    
 
     <h4><a href="/visu-labs/post/boqueirao-por-ano/">Boqueirao Por Ano</a></h4>
     <h5>November 28, 2017</h5>
-
+    
 
 </div>
 
 
-    <br> <div class="text-justify"><div class="container">
+    <br> <div class="text-justify"><script src="https://d3js.org/d3.v4.min.js"></script>
+
+<div class="container">
     <div class="row">
       <h2>Visualização final de boqueirão</h2>
     </div>
     <div class="row mychart" id="chart">
     </div>
+  </div>
 
 <script type="text/javascript">
-    &ldquo;use strict&rdquo;</p>
+    "use strict"
 
-var alturaSVG = 400, larguraSVG = 900;
-var margin = {top: 10, right: 20, bottom:30, left: 45},
-    larguraVis = larguraSVG - margin.left - margin.right,
-    alturaVis = alturaSVG - margin.top - margin.bottom;
-
-
-function desenhaCirculos(dados) {var grafico = d3.select('#chart')
-  .append('svg')
-    .attr('width', larguraVis + margin.left + margin.right)
-    .attr('height', alturaVis + margin.top + margin.bottom)
-  .append('g') // para entender o &lt;g&gt; vá em x03-detalhes-svg.html
-    .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+    var alturaSVG = 400, larguraSVG = 900;
+    var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico
+        larguraVis = larguraSVG - margin.left - margin.right,
+        alturaVis = alturaSVG - margin.top - margin.bottom;
 
 
 
-var x = d3.scaleBand()
-          .domain(dados.map((dados, indice) =&gt; dados.mes))
-          .range([0, larguraVis]);
+  function desenhaCirculos(dados) {
 
-var y = d3.scaleLinear()
-          .domain([0, 100])
-          .range([alturaVis, 0]); // Configure essa escala com domain e range
-
-
-
+    var grafico = d3.select('#chart') // cria elemento <svg> com um <g> dentro
+      .append('svg')
+        .attr('width', larguraVis + margin.left + margin.right)
+        .attr('height', alturaVis + margin.top + margin.bottom)
+      .append('g') // para entender o <g> vá em x03-detalhes-svg.html
+        .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
 
+    var x = d3.scaleBand()
+              .domain(dados.map((dados, indice) => dados.mes))
+              .range([0, larguraVis]);
 
-grafico.selectAll('g')
-        .data(dados)
-        .enter()
-          .append('circle')
-            .attr(&quot;cx&quot;, d =&gt; x(d.mes) + 40)
-            .attr(&quot;cy&quot;, d =&gt; y(d.mediana))
-            .attr(&quot;r&quot;, d =&gt; d.noventa_percentil * 0.38)
-            .style(&quot;fill&quot;, &quot;goldenrod&quot;);
-
-
-grafico.selectAll('g')
-       .data(dados)
-       .enter()
-        .append('circle')
-           .attr(&quot;cx&quot;, d =&gt; x(d.mes) + 40)
-           .attr(&quot;cy&quot;, d =&gt; y(d.mediana))
-           .attr(&quot;cz&quot;, d =&gt; -1)
-           .attr(&quot;r&quot;, d =&gt; d.dez_percentil * 0.50)
-           .style(&quot;fill&quot;, &quot;steelblue&quot;);
+    var y = d3.scaleLinear()
+              .domain([0, 100])
+              .range([alturaVis, 0]);
 
 
 
 
 
-grafico.append(&quot;g&quot;)
-        .attr(&quot;class&quot;, &quot;x axis&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(0,&quot; + alturaVis + &quot;)&quot;)
-        .call(d3.axisBottom(x));
+    grafico.selectAll('g')
+            .data(dados)
+            .enter()
+              .append('circle')
+                .attr("cx", d => x(d.mes) + 40)
+                .attr("cy", d => y(d.mediana))
+                .attr("r", d => d.noventa_percentil * 0.38)
+                .style("fill", "goldenrod");
 
-grafico.append('g')
-        .attr('transform', 'translate(0,0)')
-        .call(d3.axisLeft(y));
-d3.csv(&lsquo;dados/boqueirao-por-mes.csv&rsquo;, function(dados) {
+
+    grafico.selectAll('g')
+           .data(dados)
+           .enter()
+            .append('circle')
+               .attr("cx", d => x(d.mes) + 40)
+               .attr("cy", d => y(d.mediana))
+               .attr("cz", d => -1)
+               .attr("r", d => d.dez_percentil * 0.50)
+               .style("fill", "steelblue");
+
+
+    grafico.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + alturaVis + ")")
+            .call(d3.axisBottom(x)); // magica do d3: gera eixo a partir da escala
+
+    grafico.append('g')
+            .attr('transform', 'translate(0,0)')
+            .call(d3.axisLeft(y));  // gera eixo a partir da escala
+
+
+
+  }
+
+  d3.csv('../dados/boqueirao-por-mes.csv', function(dados) {
     desenhaCirculos(dados);
   });
 
-</script>
+  </script>
 
+<p></div></p>
 </div>
-</div>
 
+    
+    
 
+    
 
-
-
-
-
+    
 
 </main>
 
@@ -226,7 +232,8 @@ d3.csv(&lsquo;dados/boqueirao-por-mes.csv&rsquo;, function(dados) {
             <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
 
         </footer>
-
+       
     </body>
 
 </html>
+

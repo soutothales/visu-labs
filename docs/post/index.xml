@@ -17,9 +17,7 @@
       <pubDate>Tue, 28 Nov 2017 09:34:05 -0300</pubDate>
       
       <guid>https://soutothales.github.io/visu-labs/post/boqueirao-por-ano/</guid>
-      <description>Visualização final de boqueirão   &amp;ldquo;use strict&amp;rdquo;
-var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom;  function desenhaCirculos(dados) {
-var grafico = d3.select(&#39;#chart&#39;) .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis + margin.left + margin.right) .attr(&#39;height&#39;, alturaVis + margin.top + margin.bottom) .append(&#39;g&#39;) // para entender o &amp;lt;g&amp;gt; vá em x03-detalhes-svg.html .attr(&#39;transform&#39;, &#39;translate(&#39; + margin.</description>
+      <description>Visualização final de boqueirão    &#34;use strict&#34; var alturaSVG = 400, larguraSVG = 900; var margin = {top: 10, right: 20, bottom:30, left: 45}, // para descolar a vis das bordas do grafico larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom; function desenhaCirculos(dados) { var grafico = d3.select(&#39;#chart&#39;) // cria elemento  com um  dentro .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis + margin.left + margin.</description>
     </item>
     
     <item>
