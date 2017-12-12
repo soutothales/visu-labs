@@ -52,7 +52,7 @@ Tarefa 4: Qual dos 3 pontos no entorno do açude foi observado maior número de 
     </div>
     <div class="row mychart" id="chart">
 </div>
-</div>
+
 
   <script type="text/javascript">
   ipt type="text/javascript">
@@ -107,11 +107,12 @@ Tarefa 4: Qual dos 3 pontos no entorno do açude foi observado maior número de 
 
     }
 
-    d3.csv('dados/boqueirao-por-mes.csv', function(dados) {
-      console.log("https://github.com/luizaugustomm/pessoas-no-acude/blob/master/dados/processados/dados.csv");
+    d3.csv('../dados/dados.csv', function(dados) {
       desenhaVis(dados);
     });
 
     console.log("provavelmente acontece primeiro") // me apague quando entender.
 
   </script>
+
+  </div>
