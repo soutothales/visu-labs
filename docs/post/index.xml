@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Minimal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Nov 2017 09:34:05 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2017 10:48:02 -0300</lastBuildDate>
     
 	<atom:link href="https://soutothales.github.io/visu-labs/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Esse Ciclismo</title>
+      <link>https://soutothales.github.io/visu-labs/post/esse-ciclismo/</link>
+      <pubDate>Mon, 11 Dec 2017 10:48:02 -0300</pubDate>
+      
+      <guid>https://soutothales.github.io/visu-labs/post/esse-ciclismo/</guid>
+      <description>Esse é o ciclismo!
+Um grupo de pesquisadores ao coletar dados em pontos distintos ao redor do Açude Velho decidiram estudar se mulheres e homens costumam andar de bicicleta em igual proporção.
+Tarefa 1: Qual sexo costuma andar mais de bicicleta ao redor do Açude Velho? -Multiple Line Chart &amp;ndash;Eixo X: Horários &amp;ndash;Eixo Y: Número de ciclistas &amp;ndash;Linha Azul: Homens &amp;ndash;Linha Laranja/Vermelha: Mulheres
+Ao observar essa grande diferença os pesquisadores então decidiram averiguar a proporção de mulheres PEDESTRES (em porcentagem).</description>
+    </item>
     
     <item>
       <title>Boqueirao Por Ano</title>
