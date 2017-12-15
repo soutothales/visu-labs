@@ -23,12 +23,6 @@
   </url>
   
   <url>
-    <loc>https://soutothales.github.io/visu-labs/</loc>
-    <lastmod>2017-12-11T10:48:02-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://soutothales.github.io/visu-labs/post/</loc>
     <lastmod>2017-12-11T10:48:02-03:00</lastmod>
     <priority>0</priority>
@@ -36,6 +30,12 @@
   
   <url>
     <loc>https://soutothales.github.io/visu-labs/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://soutothales.github.io/visu-labs/</loc>
+    <lastmod>2017-12-11T10:48:02-03:00</lastmod>
     <priority>0</priority>
   </url>
   
