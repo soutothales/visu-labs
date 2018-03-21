@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Esse é o Ciclismo Interativo</title>
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #ff9f49;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://soutothales.github.io/visu-labs//css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.30.2" />
+        
+        
+        
+    </head>
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Esse é o Ciclismo Interativo</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/visu-labs/">Home</a></li>
+                            
+                                <li><a href="/visu-labs/post/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="thales.souto@ccc.ufcg.edu.br"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/soutothales/"><i class="fa fa-github"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/visu-labs/post/esse-ciclismo-interativo/">Esse é o Ciclismo Interativo</a></h4>
+    <h5>December 19, 2017</h5>
+    
+
+</div>
+
+
+    <br> <div class="text-justify"><h1 align="center"> Esse é o ciclismo interativo! </h1>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<div class="container">
+    <style>
+     #chart rect {
+        fill: orange;
+    }
+    #chart rect:hover {
+        fill: orangered;
+    }
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      width: 50px;
+      height: 14px;
+      padding: 2px;
+      font: 12px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+    }
+    </style>
+    <div class="row">
+      <h4 align="center">O gráfico mostra a quantidade de ciclistas durante horários recomendados por especialistas para tomar sol ao redor do Açude Velho</h4>
+    </div>
+    <div class="row mychart" id="chart">
+</div>
+</div>
+
+<script type="text/javascript">
+    var alturaSVG = 400,
+        larguraSVG = 800;
+
+    var margin = {top: 10, right: 20, bottom:30, left: 60},
+          larguraVis = larguraSVG - margin.left - margin.right,
+          alturaVis = alturaSVG - margin.top - margin.bottom;
+
+
+    function desenhaVis(dados) {
+        var dataFiltrada = {}
+        //criando o "container"/"esqueleto" do gráfico
+        var grafico = d3.select('#chart')
+            .append("svg")
+                .attr('width', larguraVis + margin.left + margin.right)
+                .attr('height', alturaVis + margin.top + margin.bottom)
+            .append('g')
+                .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+        //escalas
+       var teste = dados.reduce(function(result, current) {
+           if ((current.horario_inicial >= "16:30" && current.horario_inicial <= "18:00")||
+            (current.horario_inicial <= "09:30")) {
+                  result[current.horario_inicial] = result[current.horario_inicial] || [];
+                  result[current.horario_inicial].push(current);
+            }
+        return result;
+        }, {})
+
+       var abc = []
+
+       for (var i in teste) {
+           var sum = 0;
+           for(var j in teste[i]){
+               sum += parseInt(teste[i][j].total_ciclistas);
+           }
+           abc.push({"total_ciclistas": sum, "horario_inicial": teste[i][j].horario_inicial})
+        }
+
+        var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")               
+        .style("opacity", 0);   
+        var x = d3.scaleBand().domain(abc.map((data, indice) => data.horario_inicial))
+            .range([0, larguraVis]).padding(0.1);
+
+        var y = d3.scaleLinear().domain([0, d3.max(abc, (d, i) => d.total_ciclistas * 2)]).range([alturaVis, 0]);
+        //dados mostrados
+        grafico.selectAll('g')
+            .data(abc)
+            .enter()
+            .append('rect')
+                .attr('x', d => x(d.horario_inicial))   
+                .attr('width', x.bandwidth())
+                .attr('y', d => y(d.total_ciclistas))
+                .attr('height', (d) => alturaVis - y(d.total_ciclistas))
+                .call(d3.zoom().on("zoom", function () {
+                    grafico.attr("transform", d3.event.transform)
+            }))
+            .on("mouseover", function(d) {
+                tooltip.transition().duration(200).style("opacity", .9);
+
+                tooltip.html(d.total_ciclistas)
+                .style("left", (d3.event.pageX + 20) + "px")        
+                .style("top", (d3.event.pageY - 10) + "px");
+            })                  
+        .on("mouseout", function(d) {       
+            tooltip.transition()        
+                .duration(500)      
+                .style("opacity", 0)
+                });  
+        //eixos
+        grafico.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + alturaVis + ")")
+            .call(d3.axisBottom(x));
+        grafico.append('g')
+            .attr('transform', 'translate(0,0)')
+            .call(d3.axisLeft(y));  
+        grafico.append("text")
+            .attr("transform", "translate(-35," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+            .text("Quantidade de ciclistas");
+
+      }
+
+    d3.csv('../dados/dados.csv', function(data) {
+        desenhaVis(data);
+    });
+ </script>
+
+<p></div></p>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

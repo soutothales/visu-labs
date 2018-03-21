@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Esse é o Ciclismo Interativo</title>
+      <link>https://soutothales.github.io/visu-labs/post/esse-ciclismo-interativo/</link>
+      <pubDate>Tue, 19 Dec 2017 09:12:24 -0300</pubDate>
+      
+      <guid>https://soutothales.github.io/visu-labs/post/esse-ciclismo-interativo/</guid>
+      <description>Esse é o ciclismo interativo!    #chart rect { fill: orange; } #chart rect:hover { fill: orangered; } div.tooltip { position: absolute; text-align: center; width: 50px; height: 14px; padding: 2px; font: 12px sans-serif; background: lightsteelblue; border: 0px; border-radius: 8px; }  O gráfico mostra a quantidade de ciclistas durante horários recomendados por especialistas para tomar sol ao redor do Açude Velho    var alturaSVG = 400, larguraSVG = 800; var margin = {top: 10, right: 20, bottom:30, left: 60}, larguraVis = larguraSVG - margin.</description>
+    </item>
+    
+    <item>
       <title>Esse é o ciclismo</title>
       <link>https://soutothales.github.io/visu-labs/post/esse-ciclismo/</link>
       <pubDate>Mon, 11 Dec 2017 10:48:02 -0300</pubDate>
